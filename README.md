@@ -6,6 +6,7 @@
     * [Stylesheet Indexes](#less-indexes)
 1. [Vendors Tasks](#vendors-tasks)
     * [VENDOR_VERSION](#vendor_version)
+1. [Test Tasks](#test-tasks)
 
 ### Watch Tasks
 
@@ -68,7 +69,7 @@ This two command will build the relative CSS bundle, the build is composed by th
 Every device has an index that define the structure of the different stylesheets. These indexes
 can be found in:
 
-    /client/css/{device-name}/indexes
+    client/css/{device-name}/indexes/
 
 The name of an index is structured like this:
 
@@ -93,7 +94,7 @@ strictly necessary.
 
 ### Vendors Tasks
 
-There are 3 development vendors task
+There are 3 development vendors tasks
 
 `gulp desktopDevVendors`
 
@@ -102,7 +103,7 @@ There are 3 development vendors task
 `gulp buildDevVendors`
 
 
-and 3 release vendors task
+and 3 release vendors tasks
 
 `gulp buildVendorsDesktop`
 
@@ -126,3 +127,24 @@ Vendors use a version value similar to the one used in DNS confiuration files
     Example: 15041501
 
 This value is supposed to be changed whenever a vendor library is added, removed, updated or edited.
+Vendors libraries must be added to or removed from the specific directory:
+
+    client/js/vendors/
+
+in the `gulp.paths.vendors.js` and in `karma-common.js` files.
+
+### Test Tasks
+
+There are 2 development test tasks
+
+`gulp testDesktop`
+
+`gulp testMobile`
+
+and 2 release test tasks
+
+`gulp testDesktopRelease`
+
+`gulp testMobileRelease`
+
+The main difference between this two groups is the output produced (console vs teamcity)
