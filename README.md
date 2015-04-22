@@ -2,6 +2,10 @@
 
 1. [Watch Tasks](#watch-tasks)
 1. [Codebase Tasks](#codebase-tasks)
+1. [Stylesheet Tasks](#stylesheets-tasks)
+    * [Stylesheet Indexes](#less-indexes)
+1. [Vendors Tasks](#vendors-tasks)
+    * [VENDOR_VERSION](#vendor_version)
 
 ### Watch Tasks
 
@@ -61,7 +65,7 @@ This two command will build the relative CSS bundle, the build is composed by th
 
 #### Less Indexes
 
-Every device have an index that define the structure of the different stylesheets. These indexes
+Every device has an index that define the structure of the different stylesheets. These indexes
 can be found in:
 
     /client/css/{device-name}/indexes
@@ -86,3 +90,39 @@ All the call to `@import` in the `.less` files have been moved here, therefore a
 describes the structure of the final stylesheet.
 In order to keep this consistency do not use `@import` inside any other `.less` file, unless
 strictly necessary.
+
+### Vendors Tasks
+
+There are 3 development vendors task
+
+`gulp desktopDevVendors`
+
+`gulp mobileDevVendors`
+
+`gulp buildDevVendors`
+
+
+and 3 release vendors task
+
+`gulp buildVendorsDesktop`
+
+`gulp buildVendorsMobile`
+
+`gulp buildVendors`
+
+Unless the `VENDOR_VERSION` value is changed `gulp` will use the previously generated bundles.
+
+#### VENDOR_VERSION
+
+Vendors use a version value similar to the one used in DNS confiuration files
+
+    ddmmyynn
+
+        dd -> 15
+        mm -> 04
+        yy -> 15
+        nn -> 01 (number of times the value has canged in the single day)
+
+    Example: 15041501
+
+This value is supposed to be changed whenever a vendor library is added, removed, updated or edited.
