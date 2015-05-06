@@ -16,7 +16,7 @@ There are two watch commands, one per device:
 
 `gulp desktop`
 
-The first run on your machine will require around _16s_, this time is needed to tanspile the whole
+The first run on your machine will require around _16s_, this time is needed to transpile the whole
 `.js` codebase and generate the cache file for `babel`.
 
 After the first run the `watch` initialization time should take around _4.5s_
@@ -40,7 +40,7 @@ There are two codebase tasks
 
 `gulp mobileBundle`
 
-This two commands will build the relative codebase, the build is composed by the following steps:
+This two commands will build the correspondant codebase, the build is composed by the following steps:
 
 1. **jshint check**
 1. **babel** -> from ES6 to ES5
@@ -89,8 +89,7 @@ A index file look like this:
 
 All the call to `@import` in the `.less` files have been moved here, therefore a index file
 describes the structure of the final stylesheet.
-In order to keep this consistency do not use `@import` inside any other `.less` file, unless
-strictly necessary.
+In order to keep this consistency, please, do not use `@import` inside any other `.less` file.
 
 ### Vendors Tasks
 
@@ -115,14 +114,14 @@ Unless the `VENDOR_VERSION` value is changed `gulp` will use the previously gene
 
 #### VENDOR_VERSION
 
-Vendors use a version value similar to the one used in DNS confiuration files
+Vendors use a version value similar to the one used in DNS configuration files
 
     ddmmyynn
 
         dd -> 15
         mm -> 04
         yy -> 15
-        nn -> 01 (number of times the value has canged in the single day)
+        nn -> 01 (number of times the value has changed in the single day)
 
     Example: 15041501
 
