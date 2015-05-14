@@ -9,6 +9,9 @@ In order to have a working environement plese run the following commands:
 
     gulp build              // builds release files
     gulp buildDevVendors    // build vendor files for developing
+    
+    gulp buildDevMobile     // build client mobile bundle
+    gulp buildDevDesktop    // build client desktop bundle
 
     gulp mobile             
         or                  // start the watch best suited for the device you are working on
